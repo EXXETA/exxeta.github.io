@@ -95,7 +95,7 @@ window.cookieconsent.initialise({
                 <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
                 </li>
                 
-                {% if page.url == "/about.html" %}
+                {% if page.url contains "/about" %}
                 <li class="nav-item active">
                 {% else %}
                 <li class="nav-item">
@@ -153,6 +153,17 @@ window.cookieconsent.initialise({
 <div class="main-content">
     {{ content }}
 </div>
+
+{% unless page.url contains "about" %}
+<a href="/about">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Continue the conversation</h1>
+        <p class="lead">Get in touch to talk about your data-centered use cases.</p>
+      </div>
+    </div>
+</a>
+{% endunless %}
 
 <!-- Bottom Alert Bar
 ================================================== -->
@@ -236,6 +247,6 @@ window.cookieconsent.initialise({
     
 <script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
     
-<script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
+<!--<script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>-->
 </body>
 </html>
