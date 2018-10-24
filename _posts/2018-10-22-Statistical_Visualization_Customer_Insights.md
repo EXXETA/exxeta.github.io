@@ -7,12 +7,15 @@ image: assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_file
 mathjax: true
 ---
 
-In this blog article we make use of openly available data provided by Santander of Spain
-for a data science competition held some time ago.
+In order to better understand your data and come up with useful hypotheses, data vizualisation is a crucial part of
+every data science project. It is part of a process referred to as exploratory data analysis or EDA.
+In this blog article we will show how we can generate insights from data manipulation and vizualisation.
+We make use of openly available data provided by Santander Bank for a data science competition held some time ago.
+
 Check out the [Santander product recommendation challenge](https://www.kaggle.com/c/santander-product-recommendation)
 for further details.
 
-In this article we make use of statistical visualization library [seaborn](https://seaborn.pydata.org/)
+In this article we make use of the statistical visualization library [seaborn](https://seaborn.pydata.org/)
 which is freely available as open source package for the programming language Python.
 The open source programming language Python is widely used by the data science / artificial intelligence community
 along with a plethora of open source libraries such as seaborn and pandas (we use the latter to load and manipulate the data).
