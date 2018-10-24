@@ -3,7 +3,7 @@ layout: post
 title:  "Use statistical visualization to understand the needs of your customers"
 author: waltherg
 categories: [insights, CLV]
-image: assets/images/scatterplot_matrix.png
+image: assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_24_0.png
 mathjax: true
 ---
 
@@ -21,14 +21,15 @@ Let us get started by loading the respective libraries:
 
 ```python
 import warnings
-warnings.filterwarnings('ignore')
 
+from IPython.display import display, HTML
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
+warnings.filterwarnings('ignore')
 sns.set(style="darkgrid")
-
+pd.options.display.max_columns = 8
 %matplotlib inline
 ```
 
@@ -41,7 +42,7 @@ To this end we use a sample of the data in the present article:
 
 ```python
 df = pd.read_csv(
-    'santander_sample.csv',
+    'santander_sample.csv.zip',
     parse_dates=['date_partition', 'date_joined', 'date_primary_customer'],
     low_memory=False
 )
@@ -78,19 +79,7 @@ df.head()
       <th>customer_id</th>
       <th>employee_index</th>
       <th>residence</th>
-      <th>gender</th>
-      <th>age</th>
-      <th>date_joined</th>
-      <th>is_new_customer</th>
-      <th>months_customer</th>
-      <th>is_primary_customer</th>
       <th>...</th>
-      <th>product_mortgage</th>
-      <th>product_pensions</th>
-      <th>product_loans</th>
-      <th>product_taxes</th>
-      <th>product_credit_card</th>
-      <th>product_securities</th>
       <th>product_home_account</th>
       <th>product_payroll</th>
       <th>product_pensions.1</th>
@@ -104,19 +93,7 @@ df.head()
       <td>1155702</td>
       <td>N</td>
       <td>ES</td>
-      <td>H</td>
-      <td>23</td>
-      <td>2013-08-03</td>
-      <td>0.0</td>
-      <td>23</td>
-      <td>1.0</td>
       <td>...</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -128,19 +105,7 @@ df.head()
       <td>235866</td>
       <td>N</td>
       <td>ES</td>
-      <td>V</td>
-      <td>51</td>
-      <td>2001-04-02</td>
-      <td>0.0</td>
-      <td>179</td>
-      <td>1.0</td>
       <td>...</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -152,19 +117,7 @@ df.head()
       <td>1080714</td>
       <td>N</td>
       <td>ES</td>
-      <td>H</td>
-      <td>29</td>
-      <td>2012-10-15</td>
-      <td>0.0</td>
-      <td>33</td>
-      <td>1.0</td>
       <td>...</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -176,19 +129,7 @@ df.head()
       <td>939105</td>
       <td>N</td>
       <td>ES</td>
-      <td>H</td>
-      <td>23</td>
-      <td>2011-09-07</td>
-      <td>0.0</td>
-      <td>46</td>
-      <td>1.0</td>
       <td>...</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -200,19 +141,7 @@ df.head()
       <td>1248237</td>
       <td>N</td>
       <td>ES</td>
-      <td>H</td>
-      <td>69</td>
-      <td>2014-03-13</td>
-      <td>0.0</td>
-      <td>26</td>
-      <td>1.0</td>
       <td>...</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -263,6 +192,54 @@ plt.show()
 
 It appears Santander observed a spike of new customers around July 2015.
 
+## Income analysis
+
+A key aspect of our customers we may be interested in is their median gross income.
+The Santander data set provides gross income for a number of customers.
+We remove those customers from our analysis whose gross income is not provided.
+We further only consider the gross income of those customers between ages 25 and 50.
+
+```python
+income = df.loc[df['gross_income'].notnull()]
+income = income.loc[(income['age'] >= 25) & (income['age'] <= 50)]
+```
+
+```python
+income = income.groupby(['age', 'province_name'])[['gross_income']].median()
+```
+
+```python
+income = income.reset_index().pivot('province_name', 'age', 'gross_income')
+```
+
+```python
+income = income.loc[income.isnull().sum(axis=1) < 10]
+```
+
+```python
+income['median'] = income.median(axis=1)
+income = income.sort_values('median', axis=0)
+del income['median']
+```
+
+Here we are interested in broad income trends across the age and residence of our customers.
+To this end we visualize the median income as a heatmap against both age and providene of residence.
+To simplify interpretation of this heatmap we focus on those provinces with lower overall median income.
+
+```python
+fig, ax = plt.subplots(figsize=(10,10))
+sns.heatmap(income.loc[income.median(axis=1) < 80000].fillna(0.), ax=ax)
+plt.show()
+```
+
+![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_24_0.png)
+
+The heatmap shows a broad trend of increasing median income top to bottom and with increasing age.
+
+This analysis allows us to broadly understand the financial situation of our customers across
+the country and may guide us in approaching customers in different age groups and provinces
+with targeted offerings.
+
 ## Demographic analysis
 
 To drill deeper into our data we plot the age distribution of our customers.
@@ -270,13 +247,12 @@ Achieving this is simple with the open source tools we use:
 We merely select the age column of our tabular data, `df['age']`, and call the
 distribution plot, `distplot`, functionality of the seaborn library:
 
-
 ```python
 sns.distplot(df['age'])
 plt.show()
 ```
 
-![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_18_0.png)
+![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_28_0.png)
 
 The age distribution of customers has two modes (peaks): One mode around age 25 and another closer to 50.
 
@@ -297,7 +273,15 @@ product_age = product_age.melt(id_vars=['age'], value_vars=frequent_products)
 ```
 
 ```python
-product_age['junior'] = product_age['age'] < 30
+product_age['junior'] = product_age['age'] < 40
+```
+
+```python
+product_age = product_age.loc[(product_age['age'] >= 20) & (product_age['age'] <= 60)]
+```
+
+```python
+product_age = product_age.loc[~product_age['variable'].str.contains('current_account')]
 ```
 
 ```python
@@ -306,7 +290,7 @@ graph.set(xscale='log')
 plt.show()
 ```
 
-![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_24_0.png)
+![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_36_0.png)
 
 Age-restricted financial products such as junior accounts (`products_junior_account`) are understandably
 heteregeneously distributed between the two age groups.
@@ -417,6 +401,7 @@ lifetime.head()
 </table>
 </div>
 
+
 Open-source library seaborn allows us to plot the customer-normalized / relative product count against
 lifetime buckets while simultaneously fitting a linear model to the data:
 
@@ -425,7 +410,7 @@ sns.regplot(x='months_customer', y='relative_product_count', data=lifetime)
 plt.show()
 ```
 
-![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_35_0.png)
+![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_47_0.png)
 
 Somewhat unsurprisingly the above plot shows a general increase in the number of products retained by
 a customer with increasing customer lifetime.
@@ -553,7 +538,7 @@ graph.set(yscale='log')
 plt.show()
 ```
 
-![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_44_0.png)
+![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_56_0.png)
 
 In this array of plots we can see that customer interest in current accounts (`product_current_account`) plateaus with customer lifetime.
 
