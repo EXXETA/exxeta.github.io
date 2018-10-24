@@ -1,0 +1,2 @@
+notebooks/santander_products/santander_sample.csv filter=lfs diff=lfs merge=lfs -text
+notebooks/santander_products/santander_sample.csv.zip filter=lfs diff=lfs merge=lfs -text
