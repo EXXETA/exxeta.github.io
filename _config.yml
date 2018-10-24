@@ -5,7 +5,7 @@ meta_description: "Articles on the application of artificial intelligence in var
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: ''
-permalink: pretty
+permalink: /:year/:month/:title
 google_analytics: ''
 disqus: ''
 mailchimp-list: ''

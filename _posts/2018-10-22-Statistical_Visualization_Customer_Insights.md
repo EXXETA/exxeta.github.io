@@ -71,80 +71,56 @@ df.head()
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table class="table table-hover">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
       <th>date_partition</th>
       <th>customer_id</th>
       <th>employee_index</th>
       <th>residence</th>
       <th>...</th>
       <th>product_home_account</th>
-      <th>product_payroll</th>
-      <th>product_pensions.1</th>
-      <th>product_direct_debit</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
       <td>2015-04-28</td>
       <td>1155702</td>
       <td>N</td>
       <td>ES</td>
       <td>...</td>
       <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
     </tr>
     <tr>
-      <th>1</th>
       <td>2016-02-28</td>
       <td>235866</td>
       <td>N</td>
       <td>ES</td>
       <td>...</td>
       <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
     </tr>
     <tr>
-      <th>2</th>
       <td>2015-04-28</td>
       <td>1080714</td>
       <td>N</td>
       <td>ES</td>
       <td>...</td>
       <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
     </tr>
     <tr>
-      <th>3</th>
       <td>2015-07-28</td>
       <td>939105</td>
       <td>N</td>
       <td>ES</td>
       <td>...</td>
       <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
     </tr>
     <tr>
-      <th>4</th>
       <td>2016-05-28</td>
       <td>1248237</td>
       <td>N</td>
       <td>ES</td>
       <td>...</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -351,10 +327,9 @@ lifetime.head()
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table class="table table-hover">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
       <th>months_customer</th>
       <th>no_products</th>
       <th>no_customers</th>
@@ -363,35 +338,30 @@ lifetime.head()
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
       <td>0</td>
       <td>8242.0</td>
       <td>13525</td>
       <td>0.609390</td>
     </tr>
     <tr>
-      <th>1</th>
       <td>1</td>
       <td>11236.0</td>
       <td>13117</td>
       <td>0.856598</td>
     </tr>
     <tr>
-      <th>2</th>
       <td>2</td>
       <td>11826.0</td>
       <td>12806</td>
       <td>0.923473</td>
     </tr>
     <tr>
-      <th>3</th>
       <td>3</td>
       <td>12464.0</td>
       <td>13129</td>
       <td>0.949349</td>
     </tr>
     <tr>
-      <th>4</th>
       <td>4</td>
       <td>12334.0</td>
       <td>12496</td>
@@ -467,10 +437,9 @@ lifetime_products.head()
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table class="table table-hover">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
       <th>months_customer</th>
       <th>variable</th>
       <th>value</th>
@@ -480,7 +449,6 @@ lifetime_products.head()
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
       <td>0</td>
       <td>product_current_account</td>
       <td>7576.0</td>
@@ -488,7 +456,6 @@ lifetime_products.head()
       <td>0.560148</td>
     </tr>
     <tr>
-      <th>1</th>
       <td>0</td>
       <td>product_payroll_account</td>
       <td>55.0</td>
@@ -496,7 +463,6 @@ lifetime_products.head()
       <td>0.004067</td>
     </tr>
     <tr>
-      <th>2</th>
       <td>0</td>
       <td>product_junior_account</td>
       <td>43.0</td>
@@ -504,7 +470,6 @@ lifetime_products.head()
       <td>0.003179</td>
     </tr>
     <tr>
-      <th>3</th>
       <td>0</td>
       <td>product_mas_particular_account</td>
       <td>239.0</td>
@@ -512,7 +477,6 @@ lifetime_products.head()
       <td>0.017671</td>
     </tr>
     <tr>
-      <th>4</th>
       <td>0</td>
       <td>product_particular_account</td>
       <td>0.0</td>
