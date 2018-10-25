@@ -30,7 +30,7 @@ about predicting from data, machine learning is definitely the right technology.
 We have 33 months of sales data and want to predict the sales for the next month. Let us have a look at what we want to
 predict:
 
-<table class="dataframe" border="1">
+<table class="table table-hover">
   <thead>
     <tr style="text-align: right;">
       <th>ID</th>
@@ -77,7 +77,7 @@ Given the shop id and a particular item, we want to predict how many items will 
 Let us now have a look at a 
 snippet of how our past sales data looks like:
 
-<table class="dataframe" border="1">
+<table class="table table-hover">
   <thead>
     <tr style="text-align: right;">
       <th>date</th>
@@ -141,7 +141,7 @@ particular item and shop. So, we have to count all the items that have been sold
 “data wrangling process”: Transforming the raw data into the desired form. This part can take most of the data 
 scientists time. After the transformation our data table looks like that:
 
-<table class="dataframe" border="1">
+<table class="table table-hover">
   <thead>
     <tr style="text-align: right;">
       <th>date_block_num</th>
@@ -202,7 +202,7 @@ to add the column “item_cnt_last_month” for that. So, for the row June 2013,
 the entry May 2013, shop 2, item “482” and copy the data from “item_cnt_mont”. This is another example of 
 “data wrangling”. Now our table looks like this:
 
-<table class="dataframe" border="1">
+<table class="table table-hover">
   <thead>
     <tr style="text-align: right;">
       <th>date_block_num</th>
@@ -287,7 +287,7 @@ This was all done with simple data manipulation. No machine learning was include
 step. We will not only use the item counts from last month but also from two months before that. We do a similar data 
 transformation as above and have these two additional features in our data table:
 
-<table class="dataframe" border="1">
+<table class="table table-hover">
   <thead>
     <tr style="text-align: right;">
       <th>date_block_num</th>
@@ -369,7 +369,7 @@ features.
 There are several different machine learning methods like support vector machines, neural networks or decision trees. 
 Here, we will introduce decision trees because they are very intuitive and easy to understand.
 
-![Decsion Tree](assets/images/forecast_tree.png)
+![Decsion Tree](/assets/images/forecast_tree.png)
 
 Have a look at the decision tree that was created of one month of training data. Let us take the first row in our table 
 and see what our prediction would be. The item count last month was 0. Since this is smaller than 2.5, we take the left 
@@ -396,11 +396,11 @@ last months are the most important feature. The item counts from the months befo
 also play a role. Surprisingly, the year and month are irrelevant for our prediction. Seasonality seems to not have any
 influence on the sales. That is also a valuable insight.
   
-![Permutation Importance](assets/images/permutation_importance.png)
+![Permutation Importance](/assets/images/permutation_importance.png)
 
 Now that we built and tested the model on our training data, we can predict the unknown column from our first table:
 
-<table class="dataframe" border="1">
+<table class="table table-hover">
   <thead>
     <tr style="text-align: right;">
       <th>ID</th>
