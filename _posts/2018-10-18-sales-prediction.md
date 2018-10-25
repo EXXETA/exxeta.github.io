@@ -32,7 +32,7 @@ predict:
 
 <table class="table table-hover">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th>ID</th>
       <th>shop_id</th>
       <th>item_id</th>
@@ -79,7 +79,7 @@ snippet of how our past sales data looks like:
 
 <table class="table table-hover">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th>date</th>
       <th>date_block_num</th>
       <th>shop_id</th>
@@ -143,7 +143,7 @@ scientists time. After the transformation our data table looks like that:
 
 <table class="table table-hover">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th>date_block_num</th>
       <th>shop_id</th>
       <th>item_id</th>
@@ -204,14 +204,12 @@ the entry May 2013, shop 2, item “482” and copy the data from “item_cnt_mo
 
 <table class="table table-hover">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th>date_block_num</th>
       <th>shop_id</th>
       <th>item_id</th>
       <th>year</th>
       <th>month</th>
-      <th>item_cnt_month</th>
-      <th>item_cnt_last_month</th>
     </tr>
   </thead>
   <tbody>
@@ -221,8 +219,6 @@ the entry May 2013, shop 2, item “482” and copy the data from “item_cnt_mo
       <td>30</td>
       <td>2013</td>
       <td>6</td>
-      <td>1.0</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <td>5</td>
@@ -230,8 +226,6 @@ the entry May 2013, shop 2, item “482” and copy the data from “item_cnt_mo
       <td>482</td>
       <td>2013</td>
       <td>6</td>
-      <td>2.0</td>
-      <td>1.0</td>
     </tr>
     <tr>
       <td>5</td>
@@ -239,8 +233,6 @@ the entry May 2013, shop 2, item “482” and copy the data from “item_cnt_mo
       <td>491</td>
       <td>2013</td>
       <td>6</td>
-      <td>2.0</td>
-      <td>1.0</td>
     </tr>
     <tr>
       <td>5</td>
@@ -248,8 +240,6 @@ the entry May 2013, shop 2, item “482” and copy the data from “item_cnt_mo
       <td>835</td>
       <td>2013</td>
       <td>6</td>
-      <td>1.0</td>
-      <td>2.0</td>
     </tr>
     <tr>
       <td>5</td>
@@ -257,6 +247,35 @@ the entry May 2013, shop 2, item “482” and copy the data from “item_cnt_mo
       <td>839</td>
       <td>2013</td>
       <td>6</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>item_cnt_month</th>
+      <th>item_cnt_last_month</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>1.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
       <td>2.0</td>
       <td>0.0</td>
     </tr>
@@ -289,16 +308,13 @@ transformation as above and have these two additional features in our data table
 
 <table class="table table-hover">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th>date_block_num</th>
       <th>shop_id</th>
       <th>item_id</th>
       <th>year</th>
       <th>month</th>
       <th>item_cnt_month</th>
-      <th>item_cnt_last_month</th>
-      <th>item_cnt_two_months_ago</th>
-      <th>item_cnt_three_months_ago</th>
     </tr>
   </thead>
   <tbody>
@@ -309,9 +325,6 @@ transformation as above and have these two additional features in our data table
       <td>2013</td>
       <td>6</td>
       <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
     </tr>
     <tr>
       <td>5</td>
@@ -320,9 +333,6 @@ transformation as above and have these two additional features in our data table
       <td>2013</td>
       <td>6</td>
       <td>2.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
     </tr>
     <tr>
       <td>5</td>
@@ -331,9 +341,6 @@ transformation as above and have these two additional features in our data table
       <td>2013</td>
       <td>6</td>
       <td>2.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <td>5</td>
@@ -341,9 +348,6 @@ transformation as above and have these two additional features in our data table
       <td>835</td>
       <td>2013</td>
       <td>6</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
       <td>1.0</td>
     </tr>
     <tr>
@@ -353,6 +357,40 @@ transformation as above and have these two additional features in our data table
       <td>2013</td>
       <td>6</td>
       <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>item_cnt_last_month</th>
+      <th>item_cnt_2_months_ago</th>
+      <th>item_cnt_3_months_ago</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
@@ -402,7 +440,7 @@ Now that we built and tested the model on our training data, we can predict the 
 
 <table class="table table-hover">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th>ID</th>
       <th>shop_id</th>
       <th>item_id</th>
