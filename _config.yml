@@ -29,9 +29,9 @@ authors:
     web: https://exxeta.com
     twitter:
     description: >
-                  Georg holds degrees in biochemistry and computational biology (ETH Zurich, UBC Vancouver, and
-                  John Innes Centre).
-                  He has vast industry experience in the application of machine learning methodologies.
+                  Georg holds degrees in biochemistry and computational biology from ETH Zurich,
+                  completed research at UBC Vancouver and holds a PhD degree from John Innes Centre.
+                  He has vast industry experience in the application of data science and machine learning methodologies.
 
 # Plugins
 plugins: 
