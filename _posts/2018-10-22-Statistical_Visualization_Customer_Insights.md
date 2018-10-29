@@ -7,9 +7,9 @@ image: assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_file
 mathjax: true
 ---
 
-In order to better understand your data and come up with useful hypotheses, data vizualisation is a crucial part of
+In order to better understand your data and come up with useful hypotheses, data visualisation is a crucial part of
 every data science project. It is part of a process referred to as exploratory data analysis or EDA.
-In this blog article we will show how we can generate insights from data manipulation and vizualisation.
+In this blog article we will show how we can generate insights from data manipulation and visualisation.
 We make use of openly available data provided by Santander Bank for a data science competition held some time ago.
 
 Check out the [Santander product recommendation challenge](https://www.kaggle.com/c/santander-product-recommendation)
