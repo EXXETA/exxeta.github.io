@@ -2,7 +2,7 @@
 layout: post
 title:  "Forecasting for data-driven decision making"
 author: waltherg
-categories: [insights, CLV]
+categories: [forecast]
 image: assets/images/forecast_sales_in_retail_files/forecast_sales_in_retail_52_0.png
 mathjax: true
 ---
