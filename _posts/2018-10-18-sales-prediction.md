@@ -8,7 +8,7 @@ mathjax: true
 ---
 
 In the last years technologies like data science, artificial intelligence and predictive analytics have become 
-increasingly popular. There are several applications of these technologies which include target marketing, churn 
+increasingly popular. There are several applications of these technologies which include targeted marketing, churn
 prediction or sales prediction.
 
 The academic field behind these technologies is called “machine learning”.
