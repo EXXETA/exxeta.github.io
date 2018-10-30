@@ -5,6 +5,7 @@ author: weisseo
 categories: [use case, business]
 image: assets/images/machine_learning_use_cases/Churn.png
 mathjax: true
+featured: true
 ---
 
 In the last years technologies such as data science, artificial intelligence
