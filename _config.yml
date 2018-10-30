@@ -1,6 +1,7 @@
 # Site
-name: "EXXAI"
-description: "Industry-grade artificial intelligence from Berlin."
+copyright: "EXXETA AG"
+name: "EXXETA data science and machine learning blog"
+description: "Industry-grade data science and machine learning from Berlin."
 meta_description: "Articles on the application of artificial intelligence in various industries."
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
@@ -17,16 +18,20 @@ authors:
     display_name: Oliver Weisse
     gravatar: fedcd61ed407622bccba9e6d5dd06889
     email: oliver.weisse@exxeta.com
-    web: https://exxeta.com
+    phone: +49 173 748 00 98
+    web: https://www.linkedin.com/in/oliver-weisse-0b3916109/
     twitter:
     description: >
-                  Oliver holds a degree in physics and has vast data science industry experience.
+                  Oliver holds degrees in physics from HU Berlin with research experience at Uppsala University
+                  and Potsdam Institute for Climate Impact Research.
+                  He is an experienced data science and machine learning consultant.
   waltherg:
-    name: Georg Walther
-    display_name: Georg Walther
+    name: Dr. Georg Walther
+    display_name: Dr. Georg Walther
     gravatar: 7eb7232a7c473ae8edf6e3b40c6b74a7
     email: georg.walther@exxeta.com
-    web: https://exxeta.com
+    phone: +49 152 2269 0102
+    web: https://www.linkedin.com/in/georgwalther/
     twitter:
     description: >
                   Georg holds degrees in biochemistry and computational biology from ETH Zurich,
