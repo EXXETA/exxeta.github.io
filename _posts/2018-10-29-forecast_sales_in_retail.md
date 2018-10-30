@@ -5,6 +5,7 @@ author: waltherg
 categories: [forecast]
 image: assets/images/forecast_sales_in_retail_files/forecast_sales_in_retail_52_0.png
 mathjax: true
+featured: true
 ---
 
 Accurate forecasts are key components of successful data-driven businesses.
