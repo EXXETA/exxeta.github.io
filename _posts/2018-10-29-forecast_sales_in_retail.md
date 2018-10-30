@@ -148,10 +148,6 @@ sns.relplot(x='month', y='Sales', hue='year', kind='line', data=df, height=8)
 plt.show()
 ```
 
-    /Users/gewa/anaconda3/envs/kaggle/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
-      return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
-
-
 
 ![png](/assets/images/forecast_sales_in_retail_files/forecast_sales_in_retail_11_1.png)
 
@@ -224,18 +220,6 @@ regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 ```
 
-    /Users/gewa/anaconda3/envs/kaggle/lib/python3.6/site-packages/sklearn/linear_model/base.py:485: RuntimeWarning: internal gelsd driver lwork query error, required iwork dimension not returned. This is likely the result of LAPACK bug 0038, fixed in LAPACK 3.2.2 (released July 21, 2010). Falling back to 'gelss' driver.
-      linalg.lstsq(X, y)
-
-
-
-
-
-    LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None,
-             normalize=False)
-
-
-
 
 ```python
 y_test['sales_predicted'] = regressor.predict(X_test)
@@ -251,10 +235,6 @@ y_test = y_test.melt(id_vars=['Date'], value_vars=['Sales', 'sales_predicted'])
 sns.relplot(x='Date', y='value', hue='variable', kind='line', data=y_test, height=8)
 plt.show()
 ```
-
-    /Users/gewa/anaconda3/envs/kaggle/lib/python3.6/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
-      return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
-
 
 
 ![png](/assets/images/forecast_sales_in_retail_files/forecast_sales_in_retail_22_1.png)
@@ -425,14 +405,6 @@ X_test, y_test = average_sales.loc[average_sales['Date'] >= '2015-01-01', ['sale
 regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 ```
-
-
-
-
-    LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None,
-             normalize=False)
-
-
 
 
 ```python
