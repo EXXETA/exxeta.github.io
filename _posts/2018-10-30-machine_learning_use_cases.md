@@ -33,7 +33,9 @@ and negative examples are where advertisement did not work.
 In online advertising click rates are recorded automatically, which makes it optimally suitable for machine learning.
 But also in direct (e-mailed) advertisement it is possible to record response rates and let the machine learn from the data.
 
-![png](/assets/images/machine_learning_use_cases/targeted_marketing.png)
+<center>
+<img src="/assets/images/machine_learning_use_cases/targeted_marketing.png">
+</center>
 
 Targeted marketing is famously used by Facebook and Google.
 The content of the advertisements is optimally chosen from your past click behaviour.
@@ -49,8 +51,12 @@ If you have enough examples of churn in your client data, machine learning can a
 find patterns and predict the churn event before it happens.
 With these warning signs, you can try to convince the customer of remaining with you with, for example, special offers.
 
-![png](/assets/images/machine_learning_use_cases/Churn.png)
-**http://www.everythingai.co.in/2018/01/13/churn-prediction-implementation-neural-network**
+<center>
+<img src="/assets/images/machine_learning_use_cases/Churn.png">
+<br/>
+<font size="-1">http://www.everythingai.co.in/2018/01/13/churn-prediction-implementation-neural-network</font>
+<br/><br/>
+</center>
 
 The American delivery service FedEx used this technique to predict with an accuracy of 65% to 95% if a client will
 switch to a competitor.
@@ -66,7 +72,12 @@ If you have client ratings from your users, this data can be used to predict how
 client will like a product they have not rated yet.
 But even knowing only which client bought which item can be enough to recommend appropriate products.
 
-![png](/assets/images/machine_learning_use_cases/amazon_recommender_systems.png)
+<center>
+<img src="/assets/images/machine_learning_use_cases/amazon_recommender_systems.png" height = "300">
+<br/>
+<font size="-1">http://www.amazon.com</font>
+<br/><br/>
+</center>
 
 Famous examples of these techniques are employed by Amazon.com and Netflix.
 They use their client ratings to recommend you products or movies.
@@ -92,8 +103,12 @@ while scheduling maintenance only when necessary - both of which will generate c
 For example, photographs of your products can be classified into the categories "damaged" and "not damaged".
 Techniques involving images are often summarized under the phrase computer vision.
 
-![jpeg](/assets/images/machine_learning_use_cases/predictive-mainenance.jpg)
-**https://www.industrialiotseries.com/2018/07/25/predictive-maintenance**
+<center>
+<img src="/assets/images/machine_learning_use_cases/predictive-mainenance.jpg" height = "300">
+<br/>
+<font size="-1">https://www.industrialiotseries.com/2018/07/25/predictive-maintenance</font>
+<br/><br/>
+</center>
 
 To name two examples of this approach, the American railway company TTX uses predictive maintenance
 to forecast the failure probability for each of hundreds of thousands of railcar wheels in
@@ -105,7 +120,7 @@ updating risk levels that are displayed on their operators' screens three times 
 
 A lot of support channels are separated into several categories and for each of them there are specialists
 to respond to the specific customer requests.
-To get directed to the right support channel, either the customer has to pick the right one themselves or a
+To get directed to the right support channel, either the customers have to pick the right one themselves or a
 member of the customer support staff needs to do so.
 Classifying text into predefined categories is a classical task in machine learning and can therefore be automated.
 If you have historical data where client feedback is directed to the correct support channel,
@@ -127,10 +142,12 @@ seasonality, and locality. The complexity of these data and the task make it dif
 
 In 2015, the German retail chain Rossmann was confronted with this task.
 The store managers were tasked with predicting their daily sales for up to six weeks in advance.
-They outsourced their problem to the data science competition website [kaggle.com](kaggle.com).
+They outsourced their problem to the data science competition website [kaggle.com](https://www.kaggle.com/c/rossmann-store-sales).
 
 If you are interested in how sales prediction works from a data science perspective,
-you might want to check out one of our earlier articles on this subject.
+you might want to check out one of our earlier articles on this subject
+[here](https://exxai.github.io/2018/10/sales-prediction) or [here](https://exxai.github.io/2018/10/forecast_sales_in_retail).
+
 
 ### Fraud Detection and Financial Risk Management
 
@@ -143,8 +160,12 @@ The techniques which are used to find unusual patterns in large sets of data are
 Using historical client data, it can also be calculated how likely it is for a customer to pay back a loan.
 This has proven to be very helpful for financial risk management.
 
-![jpeg](/assets/images/machine_learning_use_cases/fraud.png)
-**http://www.altosdigital.com/top-10-ecommerce-fraud-detection-prevention-tips**
+<center>
+<img src="/assets/images/machine_learning_use_cases/fraud.png" class="center">
+<br/>
+<font size="-1">http://www.altosdigital.com/top-10-ecommerce-fraud-detection-prevention-tips</font>
+<br/><br/>
+</center>
 
 There are several companies who use these kinds of techniques in their business.
 Brasil Telecom predicts, which clients will not pay back their loan and saved four million US dollar in bad loans.
@@ -160,5 +181,9 @@ From GPS data, it can also be predicted if a courier is late and inform the rece
 Continental Airlines is making use of these techniques to predict late flights and UPS predicts
 destination addresses to optimize routing.
 
-![jpeg](/assets/images/machine_learning_use_cases/logistics.jpg)
-**https://www.michiganstateuniversityonline.com/resources/supply-chain/logistics-fundamental-to-supply-chain-success/#.W9cbjycxnzI**
+<center>
+<img src="/assets/images/machine_learning_use_cases/logistics.jpg">
+<br/>
+<font size="-1">https://www.michiganstateuniversityonline.com/resources/supply-chain/logistics-fundamental-to-supply-chain-success/#.W9cbjycxnzI</font>
+<br/><br/>
+</center>
