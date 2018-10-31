@@ -85,9 +85,9 @@ df[['Store', 'Date', 'Sales']].head(3)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table class="table table-hover">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>Store</th>
       <th>Date</th>
@@ -183,11 +183,12 @@ model looks as follows:
 
 $$ \textrm{sales}(t) = \beta_0 + \beta_1 \cdot \textrm{Monday}(t) + \cdots + \beta_7 \cdot \textrm{Sunday}(t) $$
 
-Here $\textrm{Monday}(t)$ equals $1$ if $t$ corresponds to a Monday and $0$ otherwise - likewise
+Here $$\textrm{Monday}(t)$$ equals $$1$$ if $$t$$ corresponds to a Monday and $$0$$ otherwise - likewise
 for the remaining weekdays.
 
 We will use the open-source scikit-learn package to fit this linear model
-against our historical data.
+against our historical data. That is, the coefficients $$\beta_i$$ are calculated so that the prediction error on the
+training set is minimized.
 We will fit the parameters of the model on our observed sales data in the time period
 January 1st, 2013 through December 31st, 2014.
 We will then compare the predictions of our model for 2015 against our observations
@@ -240,6 +241,7 @@ plt.show()
 ![png](/assets/images/forecast_sales_in_retail_files/forecast_sales_in_retail_22_1.png)
 
 
+Let us also plot a zoomed in version where we only consider a couple of days:
 
 ```python
 sns.relplot(
@@ -278,8 +280,8 @@ $$ \textrm{sales}(t) = \alpha \cdot \textrm{sales}(t-1) + \alpha \cdot (1 - \alp
 
 This particular model is called simple exponential smoothing or SES.
 
-With $0 \leq \alpha \leq 1$ the weights of the observations decrease
-exponentially as we go back in time.
+With $$0 \leq \alpha \leq 1$$ the weights of the observations decrease
+exponentially as we go back in time. That is, the closer the past observations are, the more they count towards the prediction.
 
 Let us test this model using the open-source Python package `statsmodels`.
 
@@ -364,10 +366,13 @@ for forecasting future sales, let us combine our two approaches so far:
 Here we will forecast sales based on previous sales and further use
 one-hot encoded weekdays as predictor variables.
 
+$$ \textrm{sales}(t) = \beta_0 + \beta_1 \cdot \textrm{Monday}(t) + \cdots + \beta_7 \cdot \textrm{Sunday}(t) 
++\alpha \cdot \textrm{sales}(t-1) + \alpha \cdot (1 - \alpha) \cdot \textrm{sales}(t-2)+\cdots$$
+
 Using today's sales numbers to predict tomorrow's does not help
 us much if we intend to manage our ressources based on our forecasts.
 To this end we will try and use last week's sales numbers to predict tomorrow's,
-giving us enough to allocate our ressources as needed.
+giving us enough time to allocate our ressources as needed.
 
 
 ```python
@@ -447,7 +452,7 @@ Judging by a visual comparison between actual and forecast sales,
 our combined model does a superior job at predicting Sundays than
 our exponential smoothing model.
 
-This model furthe retains the weekly peaks observed on Mondays and Fridays
+This model further retains the weekly peaks observed on Mondays and Fridays
 (something that got lost in the exponential smoothing model)
 while also adjusting for weekly variances in overall sales levels -
 the latter is an improvement over our first model which predicted identical
