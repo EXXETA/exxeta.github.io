@@ -187,3 +187,7 @@ destination addresses to optimize routing.
 <font size="-1">https://www.michiganstateuniversityonline.com/resources/supply-chain/logistics-fundamental-to-supply-chain-success/#.W9cbjycxnzI</font>
 <br/><br/>
 </center>
+
+## References
+
+- Eric Siegel: Predictive Analytics: The Power to Predict Who Will Click, Buy, Lie, or Die
