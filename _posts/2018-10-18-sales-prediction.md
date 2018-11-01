@@ -439,7 +439,8 @@ also play a role. Surprisingly, the year and month are irrelevant for our predic
 influence on the sales - inasmuch as this could be relevant given the four months of training data we have available.
 That is also a valuable insight.
   
-![Permutation Importance](/assets/images/permutation_importance.png)
+ <center><img src="/assets/images/permutation_importance.png" height ="250"></center>
+<br/>
 
 Now that we built and tested the model on our training data, we can predict the unknown column from our first table:
 
