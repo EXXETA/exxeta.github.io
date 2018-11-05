@@ -302,7 +302,7 @@ Now we know how good our predictions are. The lower the RMSE, the better. There 
 (also called loss functions) such as the RMSE, but in practice they can be anything. For example, it could be how much money you
 make if you can make a connection between the data science problem and your finances. Practically, in data science the
 error function is tailored to the specific use case. In the example above, we used only five data points. For the 
-complete last month that we have the true sales data for, we obtain an RMSE of
+complete last month that we have the true sales data for, we obtain an RMSE of 0.98
 
 This was all done with simple data manipulation. No machine learning was included so far. Now let us get to the next 
 step. We will not only use the item counts from last month but also from two months before that. We perform data
@@ -416,7 +416,7 @@ and see what our prediction would be. The item count last month was 0. Since thi
 path down. The item count two months ago was also 0. Again, we go down the left path and we predict sales of 0.3 for the current month.
 This
 is a very simple decision tree with only two levels. In practice the trees are a lot larger. If we train a larger
-decision tree, we obtain an RMSE of . This is better than just predicting last month’s item count.
+decision tree, we obtain an RMSE of 0.81. This is better than just predicting last month’s item count.
 
 The decision tree is created in a way such that the error function (here, the RMSE) is minimized. It is important to note that we
 cannot test our model on the same data that our decision tree was trained on. Our decision tree was created with data
@@ -439,7 +439,8 @@ also play a role. Surprisingly, the year and month are irrelevant for our predic
 influence on the sales - inasmuch as this could be relevant given the four months of training data we have available.
 That is also a valuable insight.
   
-![Permutation Importance](/assets/images/permutation_importance.png)
+ <center><img src="/assets/images/permutation_importance.png" height ="250"></center>
+<br/>
 
 Now that we built and tested the model on our training data, we can predict the unknown column from our first table:
 
