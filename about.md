@@ -30,7 +30,7 @@ data science and machine learning experts!
             <strong>{{ author.display_name }}</strong><br>
             <a href="mailto:{{ author.email }}">{{ author.email }}</a><br>
             <a href="tel:{{ author.phone }}">{{ author.phone }}</a><br>
-            <a target="_blank" href="{{ author.linkedin }}"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a target="_blank" href="{{ author.web }}"><i class="fab fa-linkedin fa-2x"></i></a>
         </div>
         <div class="col-md-4">
             <span class="author-description">{{ author.description }}</span>
