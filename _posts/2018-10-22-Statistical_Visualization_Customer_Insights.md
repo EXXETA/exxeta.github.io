@@ -76,13 +76,10 @@ df.head()
 </style>
 <table class="table table-hover">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th>date_partition</th>
       <th>customer_id</th>
       <th>employee_index</th>
-      <th>residence</th>
-      <th>...</th>
-      <th>product_home_account</th>
     </tr>
   </thead>
   <tbody>
@@ -90,38 +87,59 @@ df.head()
       <td>2015-04-28</td>
       <td>1155702</td>
       <td>N</td>
-      <td>ES</td>
-      <td>...</td>
-      <td>0</td>
     </tr>
     <tr>
       <td>2016-02-28</td>
       <td>235866</td>
       <td>N</td>
-      <td>ES</td>
-      <td>...</td>
-      <td>0</td>
     </tr>
     <tr>
       <td>2015-04-28</td>
       <td>1080714</td>
       <td>N</td>
-      <td>ES</td>
-      <td>...</td>
-      <td>0</td>
     </tr>
     <tr>
       <td>2015-07-28</td>
       <td>939105</td>
       <td>N</td>
-      <td>ES</td>
-      <td>...</td>
-      <td>0</td>
     </tr>
     <tr>
       <td>2016-05-28</td>
       <td>1248237</td>
       <td>N</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>residence</th>
+      <th>...</th>
+      <th>product_home_account</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ES</td>
+      <td>...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ES</td>
+      <td>...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ES</td>
+      <td>...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ES</td>
+      <td>...</td>
+      <td>0</td>
+    </tr>
+    <tr>
       <td>ES</td>
       <td>...</td>
       <td>0</td>
@@ -167,7 +185,7 @@ graph.set_xticklabels(rotation=45)
 plt.show()
 ```
 
-![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_14_0.png)
+<center><img src="/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_14_0.png"> </center>
 
 It appears Santander observed a spike of new customers around July 2015.
 
@@ -231,7 +249,7 @@ sns.distplot(df['age'])
 plt.show()
 ```
 
-![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_28_0.png)
+ <center><img src="/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_28_0.png"> </center>
 
 The age distribution of customers has two modes (peaks): One mode around age 25 and another closer to 50.
 
@@ -383,7 +401,7 @@ sns.regplot(x='months_customer', y='relative_product_count', data=lifetime)
 plt.show()
 ```
 
-![png](/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_47_0.png)
+<center><img src="/assets/images/2018-10-22_Statistical_Visualization_Customer_Insights_files/2018-10-22_Statistical_Visualization_Customer_Insights_47_0.png"> </center>
 
 Somewhat unsurprisingly the above plot shows a general increase in the number of products retained by
 a customer with increasing customer lifetime.
@@ -442,12 +460,10 @@ lifetime_products.head()
 </style>
 <table class="table table-hover">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th>months_customer</th>
       <th>variable</th>
       <th>value</th>
-      <th>no_customers</th>
-      <th>relative_product_count</th>
     </tr>
   </thead>
   <tbody>
@@ -455,34 +471,54 @@ lifetime_products.head()
       <td>0</td>
       <td>product_current_account</td>
       <td>7576.0</td>
-      <td>13525</td>
-      <td>0.560148</td>
     </tr>
     <tr>
       <td>0</td>
       <td>product_payroll_account</td>
       <td>55.0</td>
-      <td>13525</td>
-      <td>0.004067</td>
     </tr>
     <tr>
       <td>0</td>
       <td>product_junior_account</td>
       <td>43.0</td>
-      <td>13525</td>
-      <td>0.003179</td>
     </tr>
     <tr>
       <td>0</td>
       <td>product_mas_particular_account</td>
       <td>239.0</td>
-      <td>13525</td>
-      <td>0.017671</td>
     </tr>
     <tr>
       <td>0</td>
       <td>product_particular_account</td>
       <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>no_customers</th>
+      <th>relative_product_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>13525</td>
+      <td>0.560148</td>
+    </tr>
+    <tr>
+      <td>13525</td>
+      <td>0.004067</td>
+    </tr>
+    <tr>
+      <td>13525</td>
+      <td>0.003179</td>
+    </tr>
+    <tr>
+      <td>13525</td>
+      <td>0.017671</td>
+    </tr>
+    <tr>
       <td>13525</td>
       <td>0.000000</td>
     </tr>
