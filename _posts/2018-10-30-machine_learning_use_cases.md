@@ -83,7 +83,7 @@ Famous examples of these techniques are employed by Amazon.com and Netflix.
 They use their client ratings to recommend you products or movies.
 At Amazon.com you have, for example, the features "Customers who bought this item also bought these items."
 or "These items are frequently bought together".
-Most modern eCommerce company uses these kinds of techniques nowadays.
+Most modern eCommerce companies use these kinds of techniques nowadays.
 
 ## Product / Process Improvement and Maintenance
 
