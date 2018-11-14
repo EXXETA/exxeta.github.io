@@ -146,7 +146,7 @@ They outsourced their problem to the data science competition website [kaggle.co
 
 If you are interested in how sales prediction works from a data science perspective,
 you might want to check out one of our earlier articles on this subject
-[here](https://exxai.github.io/2018/10/sales-prediction) or [here](https://exxai.github.io/2018/10/forecast_sales_in_retail).
+[here](/../2018/10/sales-prediction) or [here](/../2018/10/forecast_sales_in_retail).
 
 
 ### Fraud Detection and Financial Risk Management
