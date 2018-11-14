@@ -196,7 +196,7 @@ of that year.
 
 
 ```python
-from sklearn.linear_model import 
+from sklearn.linear_model import LinearRegression
 
 ```
 
