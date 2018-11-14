@@ -181,7 +181,7 @@ Hence we will translate each weekday to a separate boolean indicator variable
 (this process is called one-hot encoding) such that our updated linear
 model looks as follows:
 
-$$ \textrm{sales}(t) = \beta_0 + \beta_1 \cdot \textrm{Monday}(t) + \cdots + \beta_7 \cdot \textrm{Sunday}(t) $$
+$$ \textrm{sales}(t) = \beta_1 \cdot \textrm{Monday}(t) + \cdots + \beta_7 \cdot \textrm{Sunday}(t) $$
 
 Here $$\textrm{Monday}(t)$$ equals $$1$$ if $$t$$ corresponds to a Monday and $$0$$ otherwise - likewise
 for the remaining weekdays.
@@ -217,7 +217,7 @@ X_test, y_test = df.loc[df['Date'] >= '2015-01-01', weekdays], df.loc[df['Date']
 
 
 ```python
-regressor = LinearRegression()
+regressor = LinearRegression(fit_intercept=False)
 regressor.fit(X_train, y_train)
 ```
 
@@ -366,7 +366,7 @@ for forecasting future sales, let us combine our two approaches so far:
 Here we will forecast sales based on previous sales and further use
 one-hot encoded weekdays as predictor variables.
 
-$$ \textrm{sales}(t) = \beta_0 + \beta_1 \cdot \textrm{Monday}(t) + \cdots + \beta_7 \cdot \textrm{Sunday}(t) 
+$$ \textrm{sales}(t) = \beta_1 \cdot \textrm{Monday}(t) + \cdots + \beta_7 \cdot \textrm{Sunday}(t) 
 +\alpha \cdot \textrm{sales}(t-1) + \alpha \cdot (1 - \alpha) \cdot \textrm{sales}(t-2)+\cdots$$
 
 Using today's sales numbers to predict tomorrow's does not help
@@ -407,7 +407,7 @@ X_test, y_test = average_sales.loc[average_sales['Date'] >= '2015-01-01', ['sale
 
 
 ```python
-regressor = LinearRegression()
+regressor = LinearRegression(fit_intercept=False)
 regressor.fit(X_train, y_train)
 ```
 
