@@ -38,7 +38,7 @@ DE813026499
 
 <h5>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h5>
 
-Georg Walther
+Georg Walther<br>
 Kemperplatz 1<br>
 10785 Berlin<br>
 E-Mail: hello@LVLX.de
